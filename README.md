@@ -1,17 +1,13 @@
 
 <p align="center">
   <img src="logo.webp" width="200px" align="center" alt="teb logo" />
-  <h1 align="center">✨ TypeScript Backend Toolkit ✨</h1>
+  <h1 align="center">✨ TypeScript Express Backend ✨</h1>
   <p align="center">
     <br/>
     This boilerplate contains a robust and scalable backend application built with Node.js and TypeScript. The application leverages modern technologies and architectures to provide both RESTful and GraphQL APIs, ensuring flexibility and efficiency. It integrates MongoDB for data storage, Redis and Bull for job queues,in future laying the foundation for a microservices architecture.
   </p>
 </p>
 <br/>
-
-
-# TypeScript Express Backend
-
 
 ## Features
 
