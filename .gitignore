@@ -1,0 +1,43 @@
+# Ignore node modules
+node_modules/
+
+# Ignore TypeScript build output
+dist/
+build/
+
+# Ignore production environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignore compiled JavaScript files
+*.js
+*.js.map
+
+# Ignore TypeScript declaration files
+*.d.ts
+
+# Ignore TypeScript cache
+*.tsbuildinfo
+
+# Ignore coverage directory from testing frameworks
+coverage/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

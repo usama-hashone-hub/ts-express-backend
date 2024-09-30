@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", 
+    "module": "NodeNext",
+    "sourceMap": true,
+    "outDir": "./build",
+    "removeComments": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
+  },
+  "include": [".","src/index.ts"],
+  "exclude": ["node_modules","build"]
+}

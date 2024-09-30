@@ -1,0 +1,20 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/v1/**/rest-apis/*.controller.ts"],
+  "spec": {
+    "outputDirectory": "src/tsoa",
+    "specVersion": 3,
+    "specFileName": "swagger.json",
+    "securityDefinitions": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "src/tsoa"
+  }
+}

@@ -1,0 +1,62 @@
+version: '3.8'
+
+services: 
+  app:
+    container_name: ts-express
+    build: .
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"    
+      - "${GRAPHQL_PORT}:${GRAPHQL_PORT}"    
+    depends_on: 
+      rabbitmq:
+        condition: service_healthy
+    env_file:
+      - .env   
+    environment:
+      MONGODB_URL: ${MONGODB_URL}
+      REDIS_HOST: redis   
+      REDIS_PORT: ${REDIS_PORT}
+      RMQ_HOST: rabbitmq   
+      RMQ_PORT: ${RMQ_PORT} 
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db 
+      
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data 
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD-SHELL", "rabbitmqctl status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongodb_data:
+  redis_data:
+  rabbitmq_data:
