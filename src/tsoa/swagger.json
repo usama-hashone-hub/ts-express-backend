@@ -49,6 +49,34 @@
 				"type": "object",
 				"additionalProperties": false
 			},
+			"IUserList": {
+				"properties": {
+					"results": {
+						"items": {
+							"$ref": "#/components/schemas/User"
+						},
+						"type": "array"
+					},
+					"page": {
+						"type": "number",
+						"format": "double"
+					},
+					"limit": {
+						"type": "number",
+						"format": "double"
+					},
+					"totalPages": {
+						"type": "number",
+						"format": "double"
+					},
+					"totalResults": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
 			"UserInput": {
 				"properties": {
 					"name": {
@@ -83,7 +111,7 @@
 		}
 	},
 	"info": {
-		"title": "ts-express",
+		"title": "ts-express-backend",
 		"version": "1.0.0",
 		"license": {
 			"name": "ISC"
@@ -135,7 +163,9 @@
 						"description": "Ok",
 						"content": {
 							"application/json": {
-								"schema": {}
+								"schema": {
+									"$ref": "#/components/schemas/IUserList"
+								}
 							}
 						}
 					}

@@ -5,7 +5,6 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "nodemon",
-    "test": "jest",
     "build": "npm run generate:routes && tsc",
     "generate:routes": "tsoa spec-and-routes",
     "prestart": "npm run build",
@@ -19,7 +18,10 @@
       "src"
     ],
     "ext": "ts",
-    "exec": "ts-node-dev --env-file=.env src/index.ts"
+    "ignore": [
+      "src/tsoa/routes.ts"
+    ],
+    "exec": "sh -c 'tsoa spec-and-routes && ts-node-dev --env-file=.env src/index.ts'"
   },
   "author": "",
   "license": "ISC",
@@ -62,6 +64,7 @@
     "bull-board": "^2.1.3",
     "bullmq": "^5.13.2",
     "class-validator": "^0.14.1",
+    "concurrently": "^9.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dayjs": "^1.11.13",

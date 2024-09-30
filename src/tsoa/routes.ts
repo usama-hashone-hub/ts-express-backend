@@ -27,6 +27,18 @@ const models: TsoaRoute.Models = {
         "additionalProperties": false,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "IUserList": {
+        "dataType": "refObject",
+        "properties": {
+            "results": {"dataType":"array","array":{"dataType":"refObject","ref":"User"}},
+            "page": {"dataType":"double"},
+            "limit": {"dataType":"double"},
+            "totalPages": {"dataType":"double"},
+            "totalResults": {"dataType":"double"},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "UserInput": {
         "dataType": "refObject",
         "properties": {

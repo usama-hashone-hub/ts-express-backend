@@ -1,5 +1,6 @@
 import { IOptionInput } from "./graphql-apis/user.inputs";
 import { UserList } from "./graphql-apis/user.types";
+import { User } from "./user.schema";
 
 export abstract class UserStatics {
   public static paginate: (
@@ -15,7 +16,8 @@ export interface Ioptions {
   page: string;
 }
 
-export interface Ilist {
+export interface IUserList {
+  results?: User[];
   page?: number;
   limit?: number;
   totalPages?: number;

@@ -11,16 +11,21 @@ import {
 } from "tsoa";
 import userService from "../user.service";
 import { UserInput } from "../graphql-apis/user.inputs";
+import { IUserList } from "../user.interface";
+import { User } from "../user.schema";
 
 @Route("users")
 export class UsersController extends Controller {
   @Get("{userId}")
-  public async getUser(@Path() userId: string, @Query() name?: string) {
+  public async getUser(
+    @Path() userId: string,
+    @Query() name?: string
+  ): Promise<User> {
     return userService.getUserById(userId);
   }
 
   @Get()
-  public async getAllUser(@Query() limit?: number) {
+  public async getAllUser(@Query() limit?: number): Promise<IUserList> {
     return userService.getUsers(limit);
   }
 
