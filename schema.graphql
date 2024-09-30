@@ -54,6 +54,8 @@ type Mutation {
 
 type Query {
   AuthQuery: String!
+  TestBullQueue: String!
+  TestRabbitMq: String!
   getUser(id: String!): User!
   getUsers: UserList!
 }

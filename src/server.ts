@@ -10,7 +10,7 @@ import router from "./routes";
 import { RegisterRoutes } from "./tsoa/routes";
 import * as swaggerDocument from "./tsoa/swagger.json";
 import { createBullBoard } from "bull-board";
-import { UserQueueAdapter } from "./v1/user/bull-queues/default.queue";
+import { UserQueueAdapter } from "./queues/default.queue";
 
 const app = express();
 
@@ -18,7 +18,9 @@ app.enable("trust proxy");
 
 app.use(cors<Request>());
 
-app.use(helmet());
+if (process.env.NODE_ENV === "production") {
+  app.use(helmet());
+}
 
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));

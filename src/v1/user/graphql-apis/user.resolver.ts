@@ -3,8 +3,9 @@ import { UserInput, UserUpdate } from "./user.inputs";
 import userService from "../user.service";
 import { User } from "../user.schema";
 import { UserList } from "./user.types";
-import userQueue, { JobType } from "../bull-queues/default.queue";
+import userQueue from "../../../queues/default.queue";
 import mqConnection, { RMQ_QUEUES } from "../../../rabbitmq";
+import { JobType } from "../../../bull";
 
 @Resolver(() => User)
 export class UsersResolver {

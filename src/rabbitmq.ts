@@ -1,7 +1,7 @@
 import client, { Connection, Channel } from "amqplib";
-import UserConsumer from "../v1/user/user.consumer";
-import AuthConsumer from "../v1/auth/auth.consumer";
-import { HelperPromise } from "../utils/helperPromise";
+import UserConsumer from "./v1/user/user.consumer";
+import AuthConsumer from "./v1/auth/auth.consumer";
+import { HelperPromise } from "./utils/helperPromise";
 
 export enum RMQ_QUEUES {
   MESSAGE_QUEUE = "MESSAGE_QUEUE",

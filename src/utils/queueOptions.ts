@@ -1,4 +1,4 @@
-import { QueueOptions } from "bullmq";
+import { QueueBaseOptions, QueueOptions, RedisOptions } from "bullmq";
 
 const CustomQueueOptions: QueueOptions = {
   defaultJobOptions: {
@@ -11,7 +11,7 @@ const CustomQueueOptions: QueueOptions = {
   },
 };
 
-const CustomWorkerOptions = {
+const CustomWorkerOptions: QueueBaseOptions = {
   connection: CustomQueueOptions.connection,
 };
 
