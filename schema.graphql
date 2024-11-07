@@ -45,28 +45,11 @@ type Mutation {
   ChangePassword(input: ChangePasswordInput!): ResMessage!
   Login(input: AuthInput!): AuthUser!
   SignUp(input: UserInput!): AuthUser!
-  createPost(data: PostInput!): Post!
   createUser(input: UserInput!): User!
-  deletePost(id: ID!): Boolean!
   forgetPassword(input: ForgetInput!): String!
   getForgetPasswordToken(input: ForgetInputCode!): String!
   updatePassword(input: UpdatePasswordInput!): AuthUser!
-  updatePost(data: PostInput!, id: ID!): Post
   updateUser(input: UserUpdate!): User!
-}
-
-type Post {
-  description: String!
-  isActive: Boolean!
-  likes: Float!
-  title: String!
-}
-
-input PostInput {
-  description: String!
-  isActive: Boolean!
-  likes: Float!
-  title: String!
 }
 
 type Query {
@@ -75,7 +58,6 @@ type Query {
   TestRabbitMq: String!
   getUser(id: String!): User!
   getUsers: UserList!
-  post(id: ID!): Post
 }
 
 type ResMessage {

@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="logo.webp" width="200px" align="center" alt="teb logo" />
   <h1 align="center">✨ TypeScript Express Backend ✨</h1>
@@ -8,6 +7,16 @@
   </p>
 </p>
 <br/>
+
+### New Update
+
+Now you can create new module using single commad and even with schema field, try
+
+```bash
+npm run generate-module post title:String description:String isActive:Boolean likes:Number
+```
+
+Commands generate graphql-resolver and rest-api-controller with the given keys.
 
 ## Features
 
@@ -95,14 +104,14 @@ REDIS_PORT=6379
 To start the application and its services (MongoDB, Redis, and RabbitMQ) in Docker containers, run:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 This will:
 
 - Build the Docker images for your services.
 - Start the `app`, `mongodb`, `redis`, and `rabbitmq` containers.
-- Expose ports as defined in the \`docker-compose.yml\` file.
+- Expose ports as defined in the \`docker compose.yml\` file.
 
 ### 4. Verify the services
 
@@ -117,7 +126,7 @@ Once the containers are up and running, you can verify the following services:
 To run the containers in the background (detached mode), use:
 
 ```bash
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
 ### 6. Stop the services
@@ -125,10 +134,10 @@ docker-compose up --build -d
 To stop all running containers:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
-This will stop and remove all containers, networks, and volumes created by \`docker-compose up\`.
+This will stop and remove all containers, networks, and volumes created by \`docker compose up\`.
 
 ## Health Check
 
@@ -141,14 +150,13 @@ RabbitMQ has a health check in place. If RabbitMQ fails to start or becomes unhe
 - Review logs with:
 
 ```bash
-docker-compose logs
+docker compose logs
 ```
-    
+
 ## Contributions
+
 You're invited to contribute to this project! Feel free to submit issues or pull requests—let's collaborate and create something extraordinary together!
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-   
