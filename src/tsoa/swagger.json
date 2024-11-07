@@ -113,10 +113,13 @@
 	"info": {
 		"title": "ts-express-backend",
 		"version": "1.0.0",
+		"description": "A scalable Node.js TypeScript backend offering RESTful and GraphQL APIs, type-safe data models with MongoDB, job queues with Bull and Redis.",
 		"license": {
-			"name": "ISC"
+			"name": "MIT"
 		},
-		"contact": {}
+		"contact": {
+			"name": "Usama Amjad"
+		}
 	},
 	"paths": {
 		"/users/{userId}": {

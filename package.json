@@ -13,7 +13,8 @@
     "start": "node build/index.js",
     "start:prod": "NODE_ENV=production node build/index.js",
     "lint": "eslint . --ext .ts",
-    "predeploy": "npm run lint && npm test && npm run build"
+    "predeploy": "npm run lint && npm test && npm run build",
+    "generate-module": "ts-node ./scripts/generate-module.ts"
   },
   "nodemonConfig": {
     "watch": [
